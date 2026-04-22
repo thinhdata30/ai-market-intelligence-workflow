@@ -28,6 +28,17 @@ This project builds a multi-agent AI system that analyzes company PDF reports an
 - CrewAI
 - PDFSearchTool (RAG)
 - SerpAPI (Google Search)
+  ## Project Structure
+
+```bash
+ai-market-intelligence-workflow/
+├── main.py
+├── agents/
+├── tools/
+├── data/
+├── requirements.txt
+└── README.md
+```
 ## How to Run
 
 1. Install dependencies:
@@ -40,6 +51,21 @@ pip install -r requirements.txt
 
 3. Run the workflow:
 python main.py
+## Example Output
+
+- Key risks: Market saturation, supply chain volatility
+- Opportunities: AI adoption growth, emerging markets
+- Competitor insights: Strong positioning in mid-tier segment
+## Example Usage
+
+Input:
+- Company: Publix
+- Question: What are the biggest risks?
+
+Output:
+- Identified operational risks
+- Market competition insights
+- Strategic recommendations
 ## Results
 - Automated business intelligence pipeline
 - Combines internal + external data (real-world use case)
