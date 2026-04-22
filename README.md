@@ -1,5 +1,6 @@
 # AI Market Intelligence Workflow (CrewAI)
-
+## Workflow Diagram
+![Workflow](workflow.png)
 ## Overview
 This project builds a multi-agent AI system that analyzes company PDF reports and combines them with external market intelligence to generate executive-level insights.
 
