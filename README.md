@@ -28,7 +28,18 @@ This project builds a multi-agent AI system that analyzes company PDF reports an
 - CrewAI
 - PDFSearchTool (RAG)
 - SerpAPI (Google Search)
+## How to Run
 
+1. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+2. Set environment variables:
+- SERPAPI_API_KEY=your_key
+
+3. Run the workflow:
+python main.py
 ## Results
 - Automated business intelligence pipeline
 - Combines internal + external data (real-world use case)
