@@ -50,12 +50,15 @@ pip install -r requirements.txt
 - SERPAPI_API_KEY=your_key
 
 3. Run the workflow:
+```bash
 python main.py
+```
 ## Example Output
 
 - Key risks: Market saturation, supply chain volatility
 - Opportunities: AI adoption growth, emerging markets
 - Competitor insights: Strong positioning in mid-tier segment
+
 ## Example Usage
 
 Input:
