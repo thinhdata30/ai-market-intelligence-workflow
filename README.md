@@ -53,6 +53,7 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
+
 ## Example Output
 
 - Key risks: Market saturation, supply chain volatility
