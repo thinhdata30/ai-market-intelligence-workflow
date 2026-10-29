@@ -1,79 +1,97 @@
-# AI Market Intelligence Workflow (CrewAI)
-## Workflow Diagram
-![Workflow](workflow.png)
-## Overview
-This project builds a multi-agent AI system that analyzes company PDF reports and combines them with external market intelligence to generate executive-level insights.
 
-## How It Works
-1. **Internal RAG Analyst**
-   - Extracts key facts from company PDF reports using PDFSearchTool
-2. **External Research Agent**
-   - Uses Google Search (SerpAPI) to gather real-time market data
-3. **Strategy Advisor**
-   - Combines both sources to generate business insights (strengths, risks, opportunities)
+# AI Market Intelligence | Python Research Workflow & CrewAI
+
+## Overview
+
+A Python-based market intelligence research project designed to analyze company documents and organize relevant evidence for business research.
+
+The project includes a tested offline research workflow and an experimental multi-agent AI implementation using CrewAI.
+
+## Workflow Diagram
+
+![Market Intelligence Workflow](workflow.png)
+
+## Technologies
+
+- Python
+- Document analysis and text retrieval
+- PDF processing with pypdf
+- CrewAI (experimental integration)
+- SerpAPI (optional web research)
+- Pytest for automated testing
 
 ## Features
-- Multi-agent orchestration using CrewAI
-- Retrieval-Augmented Generation (RAG) from PDFs
-- Real-time external data integration
-- Executive-style structured outputs
 
-## Example Questions
-- What are the biggest risks facing this company?
-- What growth opportunities exist based on market trends?
-- How does this company compare to competitors?
+### Offline Research Workflow — Tested
 
-## Tech Stack
-- Python
-- CrewAI
-- PDFSearchTool (RAG)
-- SerpAPI (Google Search)
-  ## Project Structure
+- Reads company documents from PDF and text files.
+- Retrieves evidence related to a business research question.
+- Generates structured Markdown reports with source references.
+- Supports optional external research when configured.
+- Includes automated tests.
 
-```bash
-ai-market-intelligence-workflow/
-├── main.py
-├── agents/
-├── tools/
-├── data/
-├── requirements.txt
-└── README.md
-```
+### Multi-Agent AI — Experimental
+
+The repository also contains a CrewAI workflow designed to coordinate multiple research agents.
+
+This implementation requires an LLM/API configuration and has not yet been validated through a live execution.
+
+## Example Results
+
+Tested using a fictional company scenario, Example Retail.
+
+The workflow successfully generated a Markdown evidence report documenting revenue growth, shipping costs, and supplier delays.
+
+[View Example Research Report](outputs/example-retail-report.md)
+
+Note: The example data is fictional and does not represent real company financial results.
+
 ## How to Run
 
-1. Install dependencies:
+Install dependencies:
+
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-2. Set environment variables:
-- SERPAPI_API_KEY=your_key
+Run the tested offline workflow:
 
-3. Run the workflow:
 ```bash
-python main.py
+python main.py --company "Example Retail" --question "What are the main business risks and growth opportunities?" --data-dir data --mode offline
 ```
 
-## Example Output
+Run automated tests:
 
-- Key risks: Market saturation, supply chain volatility
-- Opportunities: AI adoption growth, emerging markets
-- Competitor insights: Strong positioning in mid-tier segment
+```bash
+python -m pip install pytest
+python -m pytest tests -v
+```
 
-## Example Usage
+## Validation
 
-Input:
-- Company: Publix
-- Question: What are the biggest risks?
+- Offline research workflow: Successfully executed
+- Example Markdown report: Generated
+- Automated tests: 2 passed
+- Live CrewAI/LLM execution: Not yet verified
 
-Output:
-- Identified operational risks
-- Market competition insights
-- Strategic recommendations
-## Results
-- Automated business intelligence pipeline
-- Combines internal + external data (real-world use case)
-- Produces structured insights for decision-making
+## Project Structure
 
-## Author
-Thinh Hoang
+- `main.py` — Main entry point
+- `research.py` — Document retrieval and reporting
+- `agents_workflow.py` — Experimental CrewAI workflow
+- `data/` — Sample company documents
+- `outputs/` — Example research report
+- `tests/` — Automated tests
+- `requirements.txt` — Core dependencies
+- `requirements-ai.txt` — Optional AI dependencies
+
+## Future Improvements
+
+- Validate live CrewAI execution with a configured LLM
+- Improve semantic retrieval relevance
+- Evaluate report quality using real public company documents
+- Add a user-facing interface
+
+## Disclaimer
+
+This project is a portfolio demonstration. Research outputs should be independently verified before being used for business decisions.
